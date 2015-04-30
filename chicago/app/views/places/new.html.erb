@@ -4,7 +4,8 @@
 
 <h2>Add a New Place</h2>
 
-<form action="/places/submit_new">
+<!-- <form action="/places/" method="post"> -->
+<%= form_tag create_places_url_path do%>
   <p><label>Title:</label> <input name="title" size="30"></p>
   <p><label>Photo URL:</label> <input name="url" size="80"></p>
   <p><label>Price:</label> <input name="price"></p>
@@ -12,3 +13,5 @@
   <textarea name="desc" cols="80" rows="3"></textarea>
   <p><button>Submit</button></p>
 </form>
+
+<% end %>

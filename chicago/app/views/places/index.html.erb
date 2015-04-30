@@ -5,15 +5,15 @@
   }
 </style>
 
-<p><%= link_to "Add a New Place", "/places/new" %></p>
+<p><%= link_to "Add a New Place", new_places_url_path %></p>
 
 <ul>
 
   <% @places.each do |place| %>
     <li>
-      <%= link_to place.title, "/places/#{place.id}" %>
+      <%= link_to place.title, show_places_url_path(place.id) %>
       (<%= number_to_currency(place.price / 100) %>)
-      <%= link_to "(delete)", "/places/#{place.id}/delete" %>
+      <%= link_to "(delete)", destroy_places_url_path(place.id), method: 'delete' %>
     </li>
   <% end %>
 
